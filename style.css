@@ -1,0 +1,260 @@
+@import url('https://fonts.googleapis.com/css2?family=Kanit&display=swap');@import url('https://fonts.googleapis.com/css2?family=Kanit&family=Rubik&display=swap');@import url('https://fonts.googleapis.com/css2?family=Rubik&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Kanit", sans-serif;
+}
+
+.container {
+    max-width: 1250px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+header {
+    background: rgba(225, 225, 225, 0.15);
+    backdrop-filter: blur(10px);
+    height: 90px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+nav .logo a {
+    text-decoration: none;
+    font-size: 30px;
+    font-weight: bold;
+    color: #fff;
+    text-transform: uppercase;
+}
+
+nav ul {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 35px;
+    font-size: 16px;
+    font-weight: 500;
+    list-style: none;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #fff;
+    transition: 0.4s ease;
+    text-transform: uppercase;
+    position: relative;
+}
+
+nav ul li a::before {
+    content: '';
+    position: absolute;
+    bottom: -7px;
+    left: 0;
+    width: 0;
+    height: 2.5px;
+    background: rgba(225, 225, 225, 0.6);
+    transition: 0.2s ease-in;
+}
+
+nav ul li a:hover::before {
+    width: 100%;
+}
+
+nav .menu {
+    position: relative;
+    width: 30px;
+    cursor: pointer;
+    appearance: none;
+    background: none;
+    outline: none;
+    border: none;
+    display: none;
+    scale: 0.8;
+}
+
+nav .menu .bar,
+nav .menu::after,
+nav .menu::before {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 3px;
+    background: #fff;
+    margin: 6px 0;
+    transition: 0.4s;
+}
+
+nav .menu.active::before {
+    transform: rotate(-45deg) translate(-8px, 5px);
+}
+
+nav .menu.active::after {
+    transform: rotate(45deg) translate(-8px, -5px);
+}
+
+nav .menu.active .bar {
+    opacity: 0;
+}
+
+.home {
+    background-image: url('./images/travel.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: -1;
+    padding: 300px 25px 50px;
+}
+
+.home::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.home-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.home-info h2 {
+    font-size: 5em;
+    font-weight: 800;
+    color: #fff;
+    line-height: 1.5em;
+    text-transform: uppercase;
+}
+
+.home-info h3 {
+    font-size: 4em;
+    font-weight: 700;
+    color: #fff;
+    line-height: 1em;
+    text-transform: uppercase;
+}
+
+.home-info p {
+    font-size: 1.1em;
+    color: #fff;
+    margin: 25px 0 20 px;
+    font-weight: 400;
+    text-align: center;
+}
+
+.home-info .btn button {
+    font-size: 16px;
+    background: #fff;
+    padding: 10px 30px;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-weight: 500;
+    border: none;
+    outline: none;
+    margin-top: 10px;
+    color: #111;
+    letter-spacing: 2px;
+    transition: 0.2s;
+    cursor: pointer;
+}
+
+.home-info .btn button:hover {
+    letter-spacing: 6px;
+}
+
+.social {
+    display: flex;
+    align-items: center;
+    margin-top: 35px;
+}
+
+.social .social-links {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.social .social-links a {
+    font-size: 20px;
+    border-radius: 50%;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 45px;
+    height: 45px;
+    border: 2px solid #fff;
+    transition: 0.4s ease;
+}
+
+.social .social-links a:hover {
+    transform: translate(-5px);
+}
+
+@media screen and (max-width: 1280px) {
+    nav {
+        padding:  0 50px;
+    }
+}
+
+@media screen and (max-width: 992px) {
+    nav .menu {
+        display: block;
+    }
+
+    nav ul {
+        position: fixed;
+        top: 90px;
+        left: -100%;
+        width: 100%;
+        max-width: 60%;
+        height: 100vh;
+        background: rgba(0, 0, 0, 0.8);
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        padding: 30px 50px;
+        gap: 25px;
+        transition: 0.4s ease-in;
+    }
+
+    nav ul li a {
+        font-size: 24px;
+    }
+
+    nav ul.active {
+        left: 0;
+    }
+
+    .home-info h2 {
+        font-size: 4.5em;
+    }
+
+    .home-info h3 {
+        font-size: 3.5em;
+    }
+
+    .home-info p {
+        font-size: 1em;
+    }
+}
