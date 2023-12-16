@@ -258,3 +258,47 @@ nav .menu.active .bar {
         font-size: 1em;
     }
 }
+
+@media screen and (max-width: 767px) {
+    nav {
+        padding: 0px 30px;
+    }
+
+    nav .logo {
+        font-size: 28px;
+    }
+
+    nav ul {
+        padding: 30px;
+    }
+
+    nav ul li a {
+        font-size: 18px;
+    }
+
+    .home-info h2 {
+        font-size: 3.2em;
+    }
+
+    .home-info h3 {
+        font-size: 2.7em;
+    }
+
+    .home-info p {
+        font-size: 0.8em;
+    }
+}
+
+@media screen and (max-width: 567px) {
+    .home-info h2 {
+        font-size: 2.3em;
+    }
+
+    .home-info h3 {
+        font-size: 1.7em;
+    }
+
+    .home-info p {
+        margin: 20px 0;
+    }
+}
